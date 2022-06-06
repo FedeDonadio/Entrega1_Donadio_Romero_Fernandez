@@ -2,16 +2,25 @@
 {% load static %}
 {% block contenidoQueCambia %}
 
-<h1>Vinos</h1>
+<h1>Agregar Vinos</h1>
 
-    <form action = "/buscar/" method="GET">
+{% if formulario.errors %}
 
-    <input type text="text" name="Producto">
+<p> Estan mal los datos</p>
+
+{% endif %}
+
+<form action="" method="POST">{% csrf_token %}
+
+    <table>
+
+        {{ formulario.as_table }}
+
+    </table>
+
+    <input type="submit", value="Enviar">
+
+</form>
     
-    <input type="button" value="Buscar">
-
-    </form>
-
-
 
 {% endblock %}

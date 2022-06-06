@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from AppBlog.models import Vino
+from AppBlog.forms import Formulario
 # Create your views here.
 
 def inicio(request):
@@ -19,7 +21,20 @@ def quesos(request):
     return render(request, 'AppBlog/quesos.html')
 
 def vinos(request):
-    return render(request, 'AppBlog/vinos.html')
+    
+    if request.method == 'POST':
+        formulario = Formulario(request.POST)
+        if formulario.is_valid():
+            informacion = formulario.cleaned_data
+            vino = Vino(varietal = informacion['varietal'], origen = informacion['origen'], fecha = informacion['fecha'], temperatura = informacion['temperatura'])
+            vino.save()
+        return render(request, "AppBlog/inicio.html")
+    else:
+        formulario = Formulario()
+        
+    return render(request, "AppBlog/vinos.html", {"formulario":formulario})
+
+
 
 
 
