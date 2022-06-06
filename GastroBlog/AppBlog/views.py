@@ -3,10 +3,8 @@ from django.http import HttpResponse
 from django.template import loader
 # Create your views here.
 
-def inicio(self):
-    plantilla = loader.get_template('AppBlog/inicio.html')
-    documento = plantilla.render()
-    return HttpResponse(documento)
+def inicio(request):
+    return render(request, 'AppBlog/inicio.html')
 
 def cafe(request):
     return render(request, 'AppBlog/cafe.html')

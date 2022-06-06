@@ -1,5 +1,17 @@
 {% extends "AppBlog/padre.html" %}
 {% load static %}
 {% block contenidoQueCambia %}
+
 <h1>Vinos</h1>
+
+    <form action = "/buscar/" method="GET">
+
+    <input type text="text" name="Producto">
+    
+    <input type="button" value="Buscar">
+
+    </form>
+
+
+
 {% endblock %}
