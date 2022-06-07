@@ -34,6 +34,24 @@ def vinos(request):
         
     return render(request, "AppBlog/vinos.html", {"formulario":formulario})
 
+def busquedaVinos(request):
+
+    return render(request, 'AppBlog/busquedaVinos.html')
+
+def buscar(request):
+
+    if request.GET['varietal']:
+
+        varietal = request.GET['varietal']
+        info = Vino.objects.filter(varietal__icontains=varietal)
+
+        return render(request, "AppBlog/resultadoBusqueda.html", {'varietal':varietal, 'info':info})
+    else:
+        respuesta = "No hay datos"
+
+    return HttpResponse(respuesta)
+
+
 
 
 

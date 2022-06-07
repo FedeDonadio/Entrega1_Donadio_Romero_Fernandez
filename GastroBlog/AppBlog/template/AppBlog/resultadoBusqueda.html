@@ -1,0 +1,17 @@
+<p>Estamos buscando el {{varietal}}</p>
+
+{% if info %}
+
+<ul>
+{% for i in info %}
+
+    <li>{{ i.varietal }}</li>
+    <li>{{ i.origen }}</li>
+    <li>{{ i.fecha }}</li>
+    <li>{{ i.temperatura }}</li>
+
+{% endfor %}
+
+</ul>
+
+{% endif %}
