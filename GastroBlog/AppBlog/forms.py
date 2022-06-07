@@ -1,6 +1,6 @@
 from django import forms
 
-class Formulario(forms.Form):
+class VinoFormulario(forms.Form):
     varietal = forms.CharField()
     origen = forms.CharField()
     fecha = forms.DateField()
