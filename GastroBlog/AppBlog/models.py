@@ -25,9 +25,6 @@ class Vino(models.Model):
     fecha = models.DateField()
     temperatura = models.IntegerField()
 
-
-
-
 class Quesos(models.Model):
     nombre = models.CharField(max_length=40)
     tipo = models.CharField(max_length=40)

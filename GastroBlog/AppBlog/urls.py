@@ -4,7 +4,7 @@ from AppBlog.views import inicio, cafe, platos, postres, quesos, vinos, buscar, 
 
 urlpatterns = [
 
-    path('inicio/', inicio, name='inicio'),
+    path('', inicio, name='inicio'),
     path('cafe/', cafe, name='cafe'),
     path('platos/', platos, name='platos'),
     path('postres/', postres, name='postres'),
