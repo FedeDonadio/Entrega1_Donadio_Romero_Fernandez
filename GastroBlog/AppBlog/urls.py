@@ -1,6 +1,6 @@
 from django import views
 from django.urls import path
-from AppBlog.views import inicio, cafe, platos, postres, quesos, vinos, busquedaVinos, buscar
+from AppBlog.views import inicio, cafe, platos, postres, quesos, vinos, buscar
 
 urlpatterns = [
 
@@ -10,6 +10,5 @@ urlpatterns = [
     path('postres/', postres, name='postres'),
     path('quesos/', quesos, name='quesos'),
     path('vinos/', vinos, name='vinos'),
-    path('busquedaVinos/', busquedaVinos, name="busquedaVinos"),
     path('buscar/', buscar),
 ]

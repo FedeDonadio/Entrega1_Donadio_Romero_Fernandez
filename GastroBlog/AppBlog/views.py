@@ -34,10 +34,6 @@ def vinos(request):
         
     return render(request, "AppBlog/vinos.html", {"formulario":formulario})
 
-def busquedaVinos(request):
-
-    return render(request, 'AppBlog/busquedaVinos.html')
-
 def buscar(request):
 
     if request.GET['varietal']:
