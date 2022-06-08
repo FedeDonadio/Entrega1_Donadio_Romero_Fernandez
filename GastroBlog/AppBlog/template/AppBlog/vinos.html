@@ -5,26 +5,9 @@
 
 <h1>Buscar Vinos</h1>
 
-<form action="/AppBlog/buscar" method="GET">
+<form action="/AppBlog/buscarVinos" method="GET">
     <input type="text" name="varietal" id="varietal">
     <input type="submit", value="Buscar">
 
 </form>
-
-<h1> Listado de Vinos</h1>
-<ul>
-{% for i in info %}
-    
-    <li>Varietal: {{ i.varietal }}</li>
-    <li>Origen: {{ i.origen }}</li>
-    <li>Fecha: {{ i.fecha }}</li>
-    <li>Temperatura Cº :{{ i.temperatura }}</li>
-    <p> </p>
-    <p> </p>
-    
-{% endfor %}
-
-</ul>
-
-
 {% endblock %}

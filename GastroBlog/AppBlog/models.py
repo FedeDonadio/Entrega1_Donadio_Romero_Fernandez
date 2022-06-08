@@ -14,7 +14,7 @@ class Postres(models.Model):
     pastelero = models.CharField(max_length=40)
 
 class Cafe(models.Model):
-    varierdad = models.CharField(max_length=40)
+    variedad = models.CharField(max_length=40)
     filtrado = models.CharField(max_length=40)
     barista = models.CharField(max_length=40)
     origen = models.CharField(max_length=40)
@@ -22,7 +22,7 @@ class Cafe(models.Model):
 class Vino(models.Model):
     varietal = models.CharField(max_length=40)
     origen = models.CharField(max_length=40)
-    fecha = models.DateField()
+    fecha = models.IntegerField()
     temperatura = models.IntegerField()
 
 class Quesos(models.Model):
