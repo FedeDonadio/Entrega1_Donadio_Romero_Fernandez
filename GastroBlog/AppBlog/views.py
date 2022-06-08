@@ -21,7 +21,9 @@ def quesos(request):
     return render(request, 'AppBlog/quesos.html')
 
 def vinos(request):
-    return render(request, 'AppBlog/vinos.html')   
+    info = Vino.objects.filter()
+
+    return render(request, 'AppBlog/vinos.html',  {'info':info})   
 
 def vinosFormulario(request):
     

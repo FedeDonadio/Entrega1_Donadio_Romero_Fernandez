@@ -10,4 +10,19 @@
     <input type="submit", value="Buscar">
 
 </form>
+
+<h1> Listado de Vinos</h1>
+<ul>
+{% for i in info %}
+    
+    <li>Varietal: {{ i.varietal }}</li>
+    <li>Origen: {{ i.origen }}</li>
+    <li>Fecha: {{ i.fecha }}</li>
+    <li>Temperatura Cº :{{ i.temperatura }}</li>
+    
+{% endfor %}
+
+</ul>
+
+
 {% endblock %}
