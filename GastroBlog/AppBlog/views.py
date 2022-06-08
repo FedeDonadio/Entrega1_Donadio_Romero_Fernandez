@@ -163,9 +163,8 @@ def buscarCafe(request):
         info = Cafe.objects.filter(variedad__icontains=variedad)
         return render(request, "AppBlog/resultadoCafe.html", {'variedad':variedad, 'info':info, 'fondo':'15480.jpg'})
     else:
-        respuesta = "No hay datos"
-
-    return HttpResponse(respuesta)
+        info = Cafe.objects.all()
+    return render(request, "AppBlog/resultadoCafe.html", {'info':info, 'fondo':'15480.jpg'})
 
 def buscarQuesos(request):
     if request.GET['nombre']:
