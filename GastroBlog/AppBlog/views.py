@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from AppBlog.models import Vino
-from AppBlog.forms import Formulario
+from AppBlog.forms import VinoFormulario
 # Create your views here.
 
 def inicio(request):
@@ -21,18 +21,25 @@ def quesos(request):
     return render(request, 'AppBlog/quesos.html')
 
 def vinos(request):
+    return render(request, 'AppBlog/vinos.html')   
+
+def vinosFormulario(request):
     
     if request.method == 'POST':
-        formulario = Formulario(request.POST)
+        formulario = VinoFormulario(request.POST)
         if formulario.is_valid():
             informacion = formulario.cleaned_data
-            vino = Vino(varietal = informacion['varietal'], origen = informacion['origen'], fecha = informacion['fecha'], temperatura = informacion['temperatura'])
-            vino.save()
+        varietal = informacion['varietal']
+        origen = informacion['origen']
+        fecha = informacion['fecha']
+        temperatura = informacion['temperatura']
+        vino = Vino(varietal=varietal , origen=origen, fecha=fecha, temperatura=temperatura )
+        vino.save()
         return render(request, "AppBlog/inicio.html")
     else:
-        formulario = Formulario()
+        formulario = VinoFormulario()
         
-    return render(request, "AppBlog/vinos.html", {"formulario":formulario})
+    return render(request, "AppBlog/vinoFormulario.html", {"formulario":formulario})
 
 def buscar(request):
 
@@ -46,6 +53,8 @@ def buscar(request):
         respuesta = "No hay datos"
 
     return HttpResponse(respuesta)
+
+
 
 
 
