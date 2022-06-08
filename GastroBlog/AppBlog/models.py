@@ -22,7 +22,7 @@ class Cafe(models.Model):
 class Vino(models.Model):
     varietal = models.CharField(max_length=40)
     origen = models.CharField(max_length=40)
-    fecha = models.IntegerField()
+    fecha = models.DateField()
     temperatura = models.IntegerField()
 
 class Quesos(models.Model):

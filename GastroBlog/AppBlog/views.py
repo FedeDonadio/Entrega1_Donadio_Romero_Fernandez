@@ -35,7 +35,7 @@ def vinosFormulario(request):
         temperatura = informacion['temperatura']
         vino = Vino(varietal=varietal , origen=origen, fecha=fecha, temperatura=temperatura )
         vino.save()
-        return render(request, "AppBlog/inicio.html")
+        return render(request, 'AppBlog/inicio.html',{'fondo':'inicio-blog.jpg'})
     else:
         formulario = VinoFormulario()
         
@@ -54,11 +54,11 @@ def quesosFormulario(request):
         queso = Quesos(nombre=nombre , tipo=tipo , origen=origen , pasteurizado=pasteurizado)
         queso.save()
         
-        return render(request, "AppBlog/inicio.html")
+        return render(request, 'AppBlog/inicio.html',{'fondo':'inicio-blog.jpg'})
     else:
         formulario = QuesosFormulario()
         
-    return render(request, "AppBlog/quesosFormulario.html", {"formulario":formulario})
+    return render(request, "AppBlog/quesosFormulario.html", {"formulario":formulario, 'fondo':'cheese.jpg'})
 
 
 def platosFormulario(request):
@@ -71,13 +71,13 @@ def platosFormulario(request):
         fecha = informacion['fecha']
         cocinero = informacion['cocinero']
         platos = Platos(nombre=nombre , pais=pais , fecha=fecha , cocinero=cocinero)
-        platos.save
+        platos.save()
         
-        return render(request, "AppBlog/inicio.html")
+        return render(request, 'AppBlog/inicio.html',{'fondo':'inicio-blog.jpg'})
     else:
         formulario = PlatosFormulario()
         
-    return render(request, "AppBlog/platosFormulario.html", {"formulario":formulario})
+    return render(request, "AppBlog/platosFormulario.html", {"formulario":formulario, 'fondo':'comida-arabe.jpg'})
 
 
 def postresFormulario(request):
@@ -93,11 +93,11 @@ def postresFormulario(request):
         postres = Postres(nombre=nombre , pais=pais , fecha=fecha , pastelero=pastelero)
         postres.save()
 
-        return render(request, "AppBlog/inicio.html")
+        return render(request, 'AppBlog/inicio.html',{'fondo':'inicio-blog.jpg'})
     else:
         formulario = PostresFormulario()
         
-    return render(request, "AppBlog/postresFormulario.html", {"formulario":formulario})
+    return render(request, "AppBlog/postresFormulario.html", {"formulario":formulario, 'fondo':'cupcakes.jpg'})
 
 
 def cafeFormulario(request):
@@ -111,13 +111,13 @@ def cafeFormulario(request):
         barista = informacion['barista']
         origen = informacion['origen']
         cafe = Cafe(variedad=variedad , filtrado=filtrado , barista=barista , origen=origen)
-        cafe.save
+        cafe.save()
 
-        return render(request, "AppBlog/inicio.html")
+        return render(request, 'AppBlog/inicio.html',{'fondo':'inicio-blog.jpg'})
     else:
         formulario = CafeFormulario()
         
-    return render(request, "AppBlog/cafeFormulario.html", {"formulario":formulario})
+    return render(request, "AppBlog/cafeFormulario.html", {"formulario":formulario, 'fondo':'15480.jpg'})
 
 
 
@@ -129,7 +129,7 @@ def buscarVinos(request):
     if request.GET['varietal']:
         varietal = request.GET['varietal']
         info = Vino.objects.filter(varietal__icontains=varietal)
-        return render(request, "AppBlog/resultadoVinos.html", {'varietal':varietal, 'info':info})
+        return render(request, "AppBlog/resultadoVinos.html", {'varietal':varietal, 'info':info, 'fondo':'alimentos-vino.jpg'})
     else:
         respuesta = "No hay datos"
 
@@ -140,7 +140,7 @@ def buscarPlatos(request):
     if request.GET['nombre']:
         nombre = request.GET['nombre']
         info = Platos.objects.filter(nombre__icontains=nombre)
-        return render(request, "AppBlog/resultadoPlatos.html", {'nombre':nombre, 'info':info})
+        return render(request, "AppBlog/resultadoPlatos.html", {'nombre':nombre, 'info':info, 'fondo':'comida-arabe.jpg'})
     else:
         respuesta = "No hay datos"
 
@@ -151,7 +151,7 @@ def buscarPostres(request):
     if request.GET['nombre']:
         nombre = request.GET['nombre']
         info = Postres.objects.filter(nombre__icontains=nombre)
-        return render(request, "AppBlog/resultadoPostres.html", {'nombre':nombre, 'info':info})
+        return render(request, "AppBlog/resultadoPostres.html", {'nombre':nombre, 'info':info, 'fondo':'cupcakes.jpg'})
     else:
         respuesta = "No hay datos"
 
@@ -161,7 +161,7 @@ def buscarCafe(request):
     if request.GET['variedad']:
         variedad = request.GET['variedad']
         info = Cafe.objects.filter(variedad__icontains=variedad)
-        return render(request, "AppBlog/resultadoCafe.html", {'variedad':variedad, 'info':info})
+        return render(request, "AppBlog/resultadoCafe.html", {'variedad':variedad, 'info':info, 'fondo':'15480.jpg'})
     else:
         respuesta = "No hay datos"
 
@@ -171,7 +171,7 @@ def buscarQuesos(request):
     if request.GET['nombre']:
         nombre = request.GET['nombre']
         info = Quesos.objects.filter(nombre__icontains=nombre)
-        return render(request, "AppBlog/resultadoQuesos.html", {'nombre':nombre, 'info':info})
+        return render(request, "AppBlog/resultadoQuesos.html", {'nombre':nombre, 'info':info, 'fondo':'cheese.jpg'})
     else:
         respuesta = "No hay datos"
 
