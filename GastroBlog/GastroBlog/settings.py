@@ -55,7 +55,7 @@ ROOT_URLCONF = 'GastroBlog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/Users/feder/Desktop/Fer Romero/GastroBlog/AppBlog/template'],
+        'DIRS': ['/Users/feder/Documents/Python/CoderHouse Curso/TRABAJO FINAL_Donadio_Romero_Fernandez/Entrega1_Donadio_Romero_Fernandez/GastroBlog/AppBlog/template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
