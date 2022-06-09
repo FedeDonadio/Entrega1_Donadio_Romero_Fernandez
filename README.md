@@ -30,3 +30,5 @@ AppBlog/ buscarQuesos/ [name='buscarQuesos']
 Para poder hacer uso del proyecto, descargar el archivo .ZIP.
 Una vez descargado, se deberá modificar la ruta de acceso de los Template en el archivo settings.py dentro de la carpeta del proyecto.
 La nueva URL a colocar se puede obtener mediante la consola, ubicándose dentro de la carpeta de los templates y escribir “pwd”. 
+
+El proyecto se encuentra en la rama "master".
