@@ -132,9 +132,9 @@ def buscarVinos(request):
         info = Vino.objects.filter(varietal__icontains=varietal)
         return render(request, "AppBlog/resultadoVinos.html", {'varietal':varietal, 'info':info, 'fondo':'alimentos-vino.jpg'})
     else:
-        info = Vino.objects.all()
+        respuesta = "No hay datos"
 
-    return render(request, "AppBlog/resultadoVinos.html", {'info':info, 'fondo':'alimentos-vino.jpg'})
+    return HttpResponse(respuesta)
 
 
 def buscarPlatos(request):
@@ -143,9 +143,9 @@ def buscarPlatos(request):
         info = Platos.objects.filter(nombre__icontains=nombre)
         return render(request, "AppBlog/resultadoPlatos.html", {'nombre':nombre, 'info':info, 'fondo':'comida-arabe.jpg'})
     else:
-        info = Platos.objects.all()
+        respuesta = "No hay datos"
 
-    return render(request, "AppBlog/resultadoPlatos.html", {'info':info, 'fondo':'comida-arabe.jpg'})
+    return HttpResponse(respuesta)
 
 
 def buscarPostres(request):
@@ -154,9 +154,9 @@ def buscarPostres(request):
         info = Postres.objects.filter(nombre__icontains=nombre)
         return render(request, "AppBlog/resultadoPostres.html", {'nombre':nombre, 'info':info, 'fondo':'cupcakes.jpg'})
     else:
-        info = Postres.objects.all()
+        respuesta = "No hay datos"
 
-    return render(request, "AppBlog/resultadoPostres.html", {'info':info, 'fondo':'cupcakes.jpg'})
+    return HttpResponse(respuesta)
 
 def buscarCafe(request):
     if request.GET['variedad']:
@@ -173,9 +173,9 @@ def buscarQuesos(request):
         info = Quesos.objects.filter(nombre__icontains=nombre)
         return render(request, "AppBlog/resultadoQuesos.html", {'nombre':nombre, 'info':info, 'fondo':'cheese.jpg'})
     else:
-        info = Quesos.objects.all()
+        respuesta = "No hay datos"
 
-    return render(request, "AppBlog/resultadoQuesos.html", {'info':info, 'fondo':'cheese.jpg'})
+    return HttpResponse(respuesta)
 
 
 
