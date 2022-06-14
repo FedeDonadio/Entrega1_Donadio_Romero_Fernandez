@@ -6,6 +6,7 @@ class Platos(models.Model):
     pais = models.CharField(max_length=30)
     fecha = models.DateField()
     cocinero = models.CharField(max_length=40)
+    receta = models.TextField()
 
 class Postres(models.Model):
     nombre = models.CharField(max_length=40)

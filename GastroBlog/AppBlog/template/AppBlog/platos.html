@@ -1,7 +1,13 @@
 {% extends "AppBlog/padre.html" %}
 {% load static %}
 {% block contenidoQueCambia %}
-<h1>Buscar Platos</h1>
+
+<p>
+    El plato principal de un menu se considera el plato mas contundente, complejo o elaborado, asi como el mas sabroso.
+    Aquí se comparten esos platos elaborados con la comunidad, por lo que puedes buscar los platos que desees:
+</p>
+
+<h>Buscar Platos</h>
 
 <form action="/AppBlog/buscarPlatos" method="GET">
     <input type="text" name="nombre" id="nombre">

@@ -11,6 +11,7 @@ class PlatosFormulario(forms.Form):
     pais = forms.CharField(max_length=30)
     fecha = forms.DateField()
     cocinero = forms.CharField(max_length=40)
+    receta = forms.CharField()
 
 class PostresFormulario(forms.Form):
     nombre = forms.CharField(max_length=40)

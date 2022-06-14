@@ -70,7 +70,8 @@ def platosFormulario(request):
         pais = informacion['pais']
         fecha = informacion['fecha']
         cocinero = informacion['cocinero']
-        platos = Platos(nombre=nombre , pais=pais , fecha=fecha , cocinero=cocinero)
+        receta = informacion['receta']
+        platos = Platos(nombre=nombre , pais=pais , fecha=fecha , cocinero=cocinero, receta=receta)
         platos.save()
         
         return render(request, 'AppBlog/inicio.html',{'fondo':'inicio-blog.jpg'})
